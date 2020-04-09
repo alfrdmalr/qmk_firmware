@@ -23,7 +23,8 @@ enum shared_layers {
   _SYMBOL,
   _NAVIGATION,
   _NUMPAD,
-  _SETTINGS
+  _SETTINGS,
+  _GAMING
 };
 
 // KEYCODES ============================================================================
@@ -38,7 +39,7 @@ enum alfrdmalr_keycodes {
 #define NUMSPACE LT(_NUMPAD, KC_SPC)
 #define NAVLAYER MO(_NAVIGATION)
 #define SYMLAYER MO(_SYMBOL)
-#define SETLAYER MO(_SETTINGS)
+#define GAMING   TG(_GAMING)
 #define CTRLSHFT C(KC_LSFT)
 #define WINUNDO  C(KC_Z)
 #define WINCOPY  C(KC_C)
@@ -57,7 +58,7 @@ enum alfrdmalr_keycodes {
 // #define K47    SYMLAYER
 #define K47    SYMR
 #define K48    KC_RALT
-#define K49    SETLAYER
+#define K49    GAMING 
 #define K4A    MU_TOG
 
 // leftmost column
@@ -246,11 +247,11 @@ enum alfrdmalr_keycodes {
 
 /* SETTINGS ============================================================================
  * ,-----------------------------------------------------------------------------------.
- * |      |      |      |      |      |      |      |      |      | BRID | BRIU |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |RGBTOG|RGBMOD|RGBHUI|RGBSAI|RGBVAI|      |      |      |      | BRID | BRIU |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |      |      |      |      |      | MPRV | MPLY | MUTE | MNXT |      |      |
+ * |      |RGBRMD|RGBHUD|RGBSAD|RGBVAD|      | MPRV | MPLY | MUTE | MNXT |      |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | ASTG | MUTO | AUOF | AUON |      |      |      | VOLD | VOLU |      |      | ASTG |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -259,14 +260,14 @@ enum alfrdmalr_keycodes {
  */
 // LEFT
 // - CORE
-#define ___SETTINGS_L1___    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO
-#define ___SETTINGS_L2___    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO
-#define ___SETTINGS_L3___    MU_TOG,   AU_OFF,   AU_ON,    KC_NO,    KC_NO
+#define ___SETTINGS_L1___    RGB_MOD,  RGB_HUI,   RGB_SAI,  RGB_VAI,   KC_NO
+#define ___SETTINGS_L2___    RGB_RMOD, RGB_HUD,   RGB_SAD,  RGB_VAD,   KC_NO
+#define ___SETTINGS_L3___    MU_TOG,   AU_OFF,    AU_ON,    KC_NO,     KC_NO
 
 // - MODS
 #define ___SETTINGS_L4___    KC_NO,    KC_NO,    KC_NO,    KC_TRNS,  KC_NO
 #define K00_SET    KC_NO
-#define K10_SET    KC_NO
+#define K10_SET    RGB_TOG
 #define K20_SET    KC_NO
 #define K30_SET    KC_ASTG
 #define K40_SET    KC_NO
@@ -284,3 +285,45 @@ enum alfrdmalr_keycodes {
 #define K2B_SET    KC_NO
 #define K3B_SET    KC_ASTG
 #define K4B_SET    KC_NO
+
+/* GAMING_CORE =========================================================================
+ * ,-----------------------------------------------------------------------------------.
+ * | ESC  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | BKSP |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | TAB  |   Q  |   W  |   E  |   R  |   T  |      | BTN1 | MS_U | BTN2 |      | MSA0 |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | ESC  |   A  |   S  |   D  |   F  |   G  |      | MS_L | MS_D | MS_R |      | MSA1 |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | SHFT |   Z  |   X  |   C  |   V  |   B  |      | BTN3 | BTN4 | BTN5 |      | MSA2 |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | CTRL | C/S  | LGUI | LALT | GNUM |    SPACE    | MSLC | MSRC | TRNS |      |      |
+ * `-----------------------------------------------------------------------------------'
+ */
+
+// LEFT
+// - CORE
+#define ____GAMING_L1____    KC_Q,  KC_W,  KC_E,   KC_R,  KC_T
+#define ____GAMING_L2____    KC_A,  KC_S,  KC_D,   KC_F,  KC_G
+#define ____GAMING_L3____    KC_Z,  KC_X,  KC_C,   KC_V,  KC_B
+
+// - MODS
+#define ____GAMING_L4____   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_SPC
+#define K00_GAM    KC_TRNS
+#define K10_GAM    KC_TAB
+#define K20_GAM    KC_ESC
+#define K30_GAM    KC_LSFT
+#define K40_GAM    KC_LCTL
+
+// RIGHT
+// - CORE
+#define ____GAMING_R1____    KC_NO,    KC_BTN1,  KC_MS_U,  KC_BTN2,   KC_NO
+#define ____GAMING_R2____    KC_NO,    KC_MS_L,  KC_MS_D,  KC_MS_R,   KC_NO
+#define ____GAMING_R3____    KC_NO,    KC_BTN3,  KC_BTN4,  KC_BTN5,   KC_NO
+
+// - MODS
+#define ____GAMING_R4____    KC_ESC,   KC_BTN1,  KC_BTN2,  KC_TRNS,   KC_TRNS
+#define K0B_GAM    KC_TRNS
+#define K1B_GAM    KC_ACL0
+#define K2B_GAM    KC_ACL1
+#define K3B_GAM    KC_ACL2
+#define K4B_GAM    KC_TRNS
