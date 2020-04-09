@@ -39,6 +39,7 @@ enum alfrdmalr_keycodes {
 #define NUMSPACE LT(_NUMPAD, KC_SPC)
 #define NAVLAYER MO(_NAVIGATION)
 #define SYMLAYER MO(_SYMBOL)
+#define SETTINGS TG(_SETTINGS)
 #define GAMING   TG(_GAMING)
 #define CTRLSHFT C(KC_LSFT)
 #define WINUNDO  C(KC_Z)
@@ -255,8 +256,7 @@ enum alfrdmalr_keycodes {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | ASTG | MUTO | AUOF | AUON |      |      |      | VOLD | VOLU |      |      | ASTG |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      | TRNS |             | TRNS |      |      |      |      |
- * `-----------------------------------------------------------------------------------'
+ * |      |      |      |      | TRNS |  SETTINGS   | TRNS |      |      |      |      | * `-----------------------------------------------------------------------------------'
  */
 // LEFT
 // - CORE
@@ -265,7 +265,7 @@ enum alfrdmalr_keycodes {
 #define ___SETTINGS_L3___    MU_TOG,   AU_OFF,    AU_ON,    KC_NO,     KC_NO
 
 // - MODS
-#define ___SETTINGS_L4___    KC_NO,    KC_NO,    KC_NO,    KC_TRNS,  KC_NO
+#define ___SETTINGS_L4___    KC_NO,    KC_NO,    KC_NO,    KC_TRNS,    SETTINGS 
 #define K00_SET    KC_NO
 #define K10_SET    RGB_TOG
 #define K20_SET    KC_NO
@@ -279,7 +279,7 @@ enum alfrdmalr_keycodes {
 #define ___SETTINGS_R3___    KC_NO,    KC_VOLD,   KC_VOLU,  KC_NO,    KC_NO
 
 // - MODS
-#define ___SETTINGS_R4___    KC_NO,    KC_TRNS,    KC_NO,   KC_NO,    KC_NO
+#define ___SETTINGS_R4___    SETTINGS,  KC_TRNS,  KC_NO,   KC_NO,    KC_NO
 #define K0B_SET    KC_NO
 #define K1B_SET    KC_NO
 #define K2B_SET    KC_NO
