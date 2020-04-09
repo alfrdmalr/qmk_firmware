@@ -41,6 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   K30_SET, ___SETTINGS_L3___,  ___SETTINGS_R3___, K3B_SET,
   K40_SET, ___SETTINGS_L4___,  ___SETTINGS_R4___, K4B_SET
 ),
+
 //GAMING
 [_GAMING] = LAYOUT_ortho_4x12_wrapper(
   K10_GAM, ____GAMING_L1____,  ____GAMING_R1____,  K1B_GAM,
