@@ -254,9 +254,10 @@ enum alfrdmalr_keycodes {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |RGBRMD|RGBHUD|RGBSAD|RGBVAD|      | MPRV | MPLY | MUTE | MNXT |      |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * | ASTG | MUTO | AUOF | AUON |      |      |      | VOLD | VOLU |      |      | ASTG |
+ * |      | MUTO | AUOF | AUON |      |      |      | VOLD | VOLU |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      | TRNS |  SETTINGS   | TRNS |      |      |      |      | * `-----------------------------------------------------------------------------------'
+ * |      |      |      |      | TRNS |  SETTINGS   | TRNS |      |      |      |      |
+ * `-----------------------------------------------------------------------------------'
  */
 // LEFT
 // - CORE
@@ -269,7 +270,7 @@ enum alfrdmalr_keycodes {
 #define K00_SET    KC_NO
 #define K10_SET    RGB_TOG
 #define K20_SET    KC_NO
-#define K30_SET    KC_ASTG
+#define K30_SET    KC_NO
 #define K40_SET    KC_NO
 
 // RIGHT
@@ -283,7 +284,7 @@ enum alfrdmalr_keycodes {
 #define K0B_SET    KC_NO
 #define K1B_SET    KC_NO
 #define K2B_SET    KC_NO
-#define K3B_SET    KC_ASTG
+#define K3B_SET    KC_NO
 #define K4B_SET    KC_NO
 
 /* GAMING_CORE =========================================================================
