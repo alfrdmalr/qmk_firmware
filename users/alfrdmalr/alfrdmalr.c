@@ -45,6 +45,8 @@ bool settings_active = false;
 bool symbols_active = false;
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch(keycode) {
+    case GAMNUM:
+      print("testing printing in gamnum layer");
     case SYML:
       if (record->event.pressed) {
         syml_pressed = true;

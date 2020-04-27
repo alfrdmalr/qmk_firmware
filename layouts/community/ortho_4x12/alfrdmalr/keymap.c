@@ -48,7 +48,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   K20_GAM, ____GAMING_L2____,  ____GAMING_R2____,  K2B_GAM,
   K30_GAM, ____GAMING_L3____,  ____GAMING_R3____,  K3B_GAM,
   K40_GAM, ____GAMING_L4____,  ____GAMING_R4____,  K4B_GAM
+),
+
+//GAMING NUMPAD
+[_GAMNUM] = LAYOUT_ortho_4x12_wrapper(
+  K10_GNP, ____GAMNUM_L1____,  ____GAMNUM_R1____,  K1B_GNP,
+  K20_GNP, ____GAMNUM_L2____,  ____GAMNUM_R2____,  K2B_GNP,
+  K30_GNP, ____GAMNUM_L3____,  ____GAMNUM_R3____,  K3B_GNP,
+  K40_GNP, ____GAMNUM_L4____,  ____GAMNUM_R4____,  K4B_GNP
 )
+
 };
-
-

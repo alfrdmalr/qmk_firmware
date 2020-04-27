@@ -24,7 +24,8 @@ enum shared_layers {
   _NAVIGATION,
   _NUMPAD,
   _SETTINGS,
-  _GAMING
+  _GAMING,
+  _GAMNUM
 };
 
 // KEYCODES ============================================================================
@@ -41,6 +42,7 @@ enum alfrdmalr_keycodes {
 #define SYMLAYER MO(_SYMBOL)
 #define SETTINGS TG(_SETTINGS)
 #define GAMING   TG(_GAMING)
+#define GAMNUM   MO(_GAMNUM)
 #define CTRLSHFT C(KC_LSFT)
 #define WINUNDO  C(KC_Z)
 #define WINCOPY  C(KC_C)
@@ -104,7 +106,7 @@ enum alfrdmalr_keycodes {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | SHFT |   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  | SHFT |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | CTRL | C/S  | LGUI | LALT | SYMB |  NUM/SPACE  | SYMB | RALT | SETT | MUTG | LEAD |
+ * | CTRL | C/S  | LGUI | LALT | SYMB |  NUM/SPACE  | SYMB | RALT |      | MUTG | LEAD |
  * `-----------------------------------------------------------------------------------'
  */
 
@@ -250,11 +252,11 @@ enum alfrdmalr_keycodes {
  * ,-----------------------------------------------------------------------------------.
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |RGBTOG|RGBMOD|RGBHUI|RGBSAI|RGBVAI|      |      |      |      | BRID | BRIU |      |
+ * |RGBTOG|RGBMOD|RGBHUI|RGBSAI|RGBVAI|      |      | MPRV | MNXT | BRID | BRIU |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |RGBRMD|RGBHUD|RGBSAD|RGBVAD|      | MPRV | MPLY | MUTE | MNXT |      |      |
+ * |      |RGBRMD|RGBHUD|RGBSAD|RGBVAD|      |      | VOLD | VOLU |      |      |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      | MUTO | AUOF | AUON |      |      |      | VOLD | VOLU |      |      |      |
+ * |      | MUTO | AUOF | AUON |      |      |      | MUTE | PLAY |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      | TRNS |  SETTINGS   | TRNS |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
@@ -275,9 +277,9 @@ enum alfrdmalr_keycodes {
 
 // RIGHT
 // - CORE
-#define ___SETTINGS_R1___    KC_NO,    KC_NO,     KC_NO,    KC_BRID,  KC_BRIU
-#define ___SETTINGS_R2___    KC_MPRV,  KC_MPLY,   KC_MUTE,  KC_MNXT,  KC_NO
-#define ___SETTINGS_R3___    KC_NO,    KC_VOLD,   KC_VOLU,  KC_NO,    KC_NO
+#define ___SETTINGS_R1___    KC_NO,    KC_MPRV,   KC_MNXT,  KC_BRID,  KC_BRIU
+#define ___SETTINGS_R2___    KC_NO,    KC_VOLD,   KC_VOLU,  KC_NO,    KC_NO
+#define ___SETTINGS_R3___    KC_NO,    KC_MUTE,   KC_MPLY,  KC_NO,    KC_NO
 
 // - MODS
 #define ___SETTINGS_R4___    SETTINGS,  KC_TRNS,  KC_NO,   KC_NO,    KC_NO
@@ -289,27 +291,28 @@ enum alfrdmalr_keycodes {
 
 /* GAMING_CORE =========================================================================
  * ,-----------------------------------------------------------------------------------.
- * | ESC  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | BKSP |
+ * |  `   |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | TRNS |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | TAB  |   Q  |   W  |   E  |   R  |   T  |      | BTN1 | MS_U | BTN2 |      | MSA0 |
+ * | TAB  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | TRNS |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | ESC  |   A  |   S  |   D  |   F  |   G  |      | MS_L | MS_D | MS_R |      | MSA1 |
+ * | ESC  |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  | TRNS |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | SHFT |   Z  |   X  |   C  |   V  |   B  |      | BTN3 | BTN4 | BTN5 |      | MSA2 |
+ * | SHFT |   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  | TRNS |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | CTRL | C/S  | LGUI | LALT | GNUM |    SPACE    | MSLC | MSRC | TRNS |      |      |
+ * | CTRL | C/S  | LGUI | LALT | GNUM |    SPACE    | SYMB | RALT |  SET | TRNS | TRNS |
  * `-----------------------------------------------------------------------------------'
  */
 
 // LEFT
 // - CORE
+#define ____GAMING_L0____    ____NUMROW_L0____
 #define ____GAMING_L1____    KC_Q,  KC_W,  KC_E,   KC_R,  KC_T
 #define ____GAMING_L2____    KC_A,  KC_S,  KC_D,   KC_F,  KC_G
 #define ____GAMING_L3____    KC_Z,  KC_X,  KC_C,   KC_V,  KC_B
 
 // - MODS
-#define ____GAMING_L4____   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_SPC
-#define K00_GAM    KC_TRNS
+#define ____GAMING_L4____    CTRLSHFT,  KC_LGUI,  KC_LALT,  GAMNUM,  KC_SPC
+#define K00_GAM    KC_GRV
 #define K10_GAM    KC_TAB
 #define K20_GAM    KC_ESC
 #define K30_GAM    KC_LSFT
@@ -317,14 +320,60 @@ enum alfrdmalr_keycodes {
 
 // RIGHT
 // - CORE
-#define ____GAMING_R1____    KC_NO,    KC_BTN1,  KC_MS_U,  KC_BTN2,   KC_NO
-#define ____GAMING_R2____    KC_NO,    KC_MS_L,  KC_MS_D,  KC_MS_R,   KC_NO
-#define ____GAMING_R3____    KC_NO,    KC_BTN3,  KC_BTN4,  KC_BTN5,   KC_NO
+#define ____GAMING_R0____    ____NUMROW_R0____
+#define ____GAMING_R1____    KC_Y,   KC_U,   KC_I,     KC_O,    KC_P
+#define ____GAMING_R2____    KC_H,   KC_J,   KC_K,     KC_L,    KC_SCLN
+#define ____GAMING_R3____    KC_N,   KC_M,   KC_COMM,  KC_DOT,  KC_SLSH
 
 // - MODS
-#define ____GAMING_R4____    KC_ESC,   KC_BTN1,  KC_BTN2,  KC_TRNS,   KC_TRNS
+#define ____GAMING_R4____    KC_SPC,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS
 #define K0B_GAM    KC_TRNS
-#define K1B_GAM    KC_ACL0
-#define K2B_GAM    KC_ACL1
-#define K3B_GAM    KC_ACL2
+#define K1B_GAM    KC_TRNS
+#define K2B_GAM    KC_TRNS
+#define K3B_GAM    KC_TRNS
 #define K4B_GAM    KC_TRNS
+
+/* GAMING_NUM ==========================================================================
+ * ,-----------------------------------------------------------------------------------.
+ * | TRNS | TRNS | TRNS | TRNS | TRNS | TRNS | TRNS | TRNS | TRNS | TRNS | TRNS | TRNS |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | TRNS |   1  |   2  |   3  | `    |      |      |      |      |      |      | TRNS |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | TRNS |   4  |   5  |   6  |      |      |      |      |      |      |      | ENTR |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | TRNS |   7  |   8  |   9  |      |      |      |      |      |      |      | TRNS |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | TRNS | TRNS | TRNS | TRNS | TRNS |    SPACE    | TRNS | TRNS | TRNS | TRNS | TRNS |
+ * `-----------------------------------------------------------------------------------'
+ */
+
+// LEFT
+// - CORE
+#define ____GAMNUM_L0____    KC_NO, KC_NO, KC_NO,  KC_NO,  KC_NO
+#define ____GAMNUM_L1____    KC_1,  KC_2,  KC_3,   KC_GRV, KC_NO
+#define ____GAMNUM_L2____    KC_4,  KC_5,  KC_6,   KC_NO,  KC_NO
+#define ____GAMNUM_L3____    KC_7,  KC_8,  KC_9,   KC_NO,  KC_NO
+
+// - MODS
+#define ____GAMNUM_L4____    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_SPC
+#define K00_GNP    KC_TRNS
+#define K10_GNP    KC_TRNS
+#define K20_GNP    KC_TRNS
+#define K30_GNP    KC_TRNS
+#define K40_GNP    KC_TRNS
+
+// RIGHT
+// - CORE
+#define ____GAMNUM_R0____    KC_NO,  KC_NO,  KC_NO,    KC_NO,   KC_NO
+#define ____GAMNUM_R1____    KC_NO,  KC_NO,  KC_NO,    KC_NO,   KC_NO
+#define ____GAMNUM_R2____    KC_NO,  KC_NO,  KC_NO,    KC_NO,   KC_NO
+#define ____GAMNUM_R3____    KC_NO,  KC_NO,  KC_NO,    KC_NO,   KC_NO
+
+// - MODS
+#define ____GAMNUM_R4____    KC_SPC,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS
+#define K0B_GNP    KC_TRNS
+#define K1B_GNP    KC_TRNS
+#define K2B_GNP    KC_ENTER
+#define K3B_GNP    KC_TRNS
+#define K4B_GNP    KC_TRNS
+
