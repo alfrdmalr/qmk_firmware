@@ -20,12 +20,12 @@ along with this program. If not, see <http://www.gnu/org/licenses/>.
 
 enum shared_layers {
   _QWERTY,
-  _SYMBOL,
   _NAVIGATION,
   _NUMPAD,
-  _SETTINGS,
   _GAMING,
-  _GAMNUM
+  _GAMNUM,
+  _SYMBOL,
+  _SETTINGS
 };
 
 // KEYCODES ============================================================================
@@ -326,7 +326,7 @@ enum alfrdmalr_keycodes {
 #define ____GAMING_R3____    KC_N,   KC_M,   KC_COMM,  KC_DOT,  KC_SLSH
 
 // - MODS
-#define ____GAMING_R4____    KC_SPC,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS
+#define ____GAMING_R4____    KC_SPC,  SYMR,  KC_TRNS,  KC_TRNS,  KC_TRNS
 #define K0B_GAM    KC_TRNS
 #define K1B_GAM    KC_TRNS
 #define K2B_GAM    KC_TRNS

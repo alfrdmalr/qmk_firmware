@@ -41,12 +41,20 @@ void matrix_scan_user(void) {
 
 bool syml_pressed = false;
 bool symr_pressed = false;
+bool gnp_pressed = false;
 bool settings_active = false;
 bool symbols_active = false;
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch(keycode) {
     case GAMNUM:
-      print("testing printing in gamnum layer");
+      if (record->event.pressed) {
+        gnp_pressed = true;
+      } else {
+        gnp_pressed = false;
+      }
+      // intentionally letting this fall through to simplify
+      // the logic for turning on settings 
     case SYML:
       if (record->event.pressed) {
         syml_pressed = true;
@@ -73,7 +81,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       layer_off(_SETTINGS);
       settings_active = false;
     }
-    layer_on(_SYMBOL);
+    // we can get here from the gaming numpad key or a symbol key being pressed
+    // since this is where we'd turn on symbol layer, we check if gamnum is on
+    // if so, don't want symbols to be active since the symbol layer takes precedence
+    if (!gnp_pressed) {
+      layer_on(_SYMBOL);
+    }
     symbols_active = true;
   } else {
     if (symbols_active) {
@@ -88,6 +101,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // allow access to the settings layer to turn music mode back off
 bool music_mask_user(uint16_t keycode) {
   switch (keycode) {
+    case GAMNUM:
     case SYML:
     case SYMR:
       return false;
