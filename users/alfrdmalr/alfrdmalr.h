@@ -54,15 +54,13 @@ enum alfrdmalr_keycodes {
 #define K41    CTRLSHFT
 #define K42    KC_LGUI
 #define K43    KC_LALT
-// #define K44    SYMLAYER
 #define K44    SYML
 #define K45    NUMSPACE
 #define K46    NUMSPACE
-// #define K47    SYMLAYER
 #define K47    SYMR
 #define K48    KC_RALT
-#define K49    GAMING 
-#define K4A    MU_TOG
+#define K49    KC_RGUI 
+#define K4A    KC_RCTL
 
 // leftmost column
 #define K00    KC_ESC
@@ -250,13 +248,13 @@ enum alfrdmalr_keycodes {
 
 /* SETTINGS ============================================================================
  * ,-----------------------------------------------------------------------------------.
- * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * |      |      |      |      |      |      |      |      |      |      |      | RSET |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |RGBTOG|RGBMOD|RGBHUI|RGBSAI|RGBVAI|      |      | MPRV | MNXT | BRID | BRIU |      |
+ * |RGBTOG|RGBMOD|RGBHUI|RGBSAI|RGBVAI|      | AUON | MPRV | MNXT | BRID | BRIU |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |RGBRMD|RGBHUD|RGBSAD|RGBVAD|      |      | VOLD | VOLU |      |      |      |
+ * |      |RGBRMD|RGBHUD|RGBSAD|RGBVAD| GAME | MUTO | VOLD | VOLU |      |      |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      | MUTO | AUOF | AUON |      |      |      | MUTE | PLAY |      |      |      |
+ * |      |      |      |      |      |      | AUOF | MUTE | PLAY |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      | TRNS |  SETTINGS   | TRNS |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
@@ -264,8 +262,8 @@ enum alfrdmalr_keycodes {
 // LEFT
 // - CORE
 #define ___SETTINGS_L1___    RGB_MOD,  RGB_HUI,   RGB_SAI,  RGB_VAI,   KC_NO
-#define ___SETTINGS_L2___    RGB_RMOD, RGB_HUD,   RGB_SAD,  RGB_VAD,   KC_NO
-#define ___SETTINGS_L3___    MU_TOG,   AU_OFF,    AU_ON,    KC_NO,     KC_NO
+#define ___SETTINGS_L2___    RGB_RMOD, RGB_HUD,   RGB_SAD,  RGB_VAD,   GAMING
+#define ___SETTINGS_L3___    KC_NO,    KC_NO,     KC_NO,    KC_NO,     KC_NO
 
 // - MODS
 #define ___SETTINGS_L4___    KC_NO,    KC_NO,    KC_NO,    KC_TRNS,    SETTINGS 
@@ -277,13 +275,13 @@ enum alfrdmalr_keycodes {
 
 // RIGHT
 // - CORE
-#define ___SETTINGS_R1___    KC_NO,    KC_MPRV,   KC_MNXT,  KC_BRID,  KC_BRIU
-#define ___SETTINGS_R2___    KC_NO,    KC_VOLD,   KC_VOLU,  KC_NO,    KC_NO
-#define ___SETTINGS_R3___    KC_NO,    KC_MUTE,   KC_MPLY,  KC_NO,    KC_NO
+#define ___SETTINGS_R1___    AU_ON,    KC_MPRV,   KC_MNXT,  KC_BRID,  KC_BRIU
+#define ___SETTINGS_R2___    MU_TOG,   KC_VOLD,   KC_VOLU,  KC_NO,    KC_NO
+#define ___SETTINGS_R3___    AU_OFF,   KC_MUTE,   KC_MPLY,  KC_NO,    KC_NO
 
 // - MODS
 #define ___SETTINGS_R4___    SETTINGS,  KC_TRNS,  KC_NO,   KC_NO,    KC_NO
-#define K0B_SET    KC_NO
+#define K0B_SET    RESET
 #define K1B_SET    KC_NO
 #define K2B_SET    KC_NO
 #define K3B_SET    KC_NO
